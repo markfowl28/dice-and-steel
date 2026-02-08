@@ -130,12 +130,15 @@
     <ClCompile Include="Combat.cpp" />
     <ClCompile Include="Dice.cpp" />
     <ClCompile Include="DiceAndSteel.cpp" />
+    <ClCompile Include="GameEngine.cpp" />
     <ClCompile Include="Resolution.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Combat.h" />
     <ClInclude Include="Dice.h" />
+    <ClInclude Include="GameEngine.h" />
     <ClInclude Include="Resolution.h" />
+    <ClInclude Include="TurnSnapshot.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
