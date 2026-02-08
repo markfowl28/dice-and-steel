@@ -131,12 +131,14 @@
     <ClCompile Include="Dice.cpp" />
     <ClCompile Include="DiceAndSteel.cpp" />
     <ClCompile Include="GameEngine.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Resolution.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Combat.h" />
     <ClInclude Include="Dice.h" />
     <ClInclude Include="GameEngine.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Resolution.h" />
     <ClInclude Include="TurnSnapshot.h" />
   </ItemGroup>

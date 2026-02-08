@@ -21,12 +21,37 @@ TurnSnapshot buildTurn() {
 	return snap;
 }
 
-void GameEngine::runTurn() {
-	TurnSnapshot snap = buildTurn();
+GameEngine::GameEngine() {
+	attacker.health = 10;
+	defender.health = 10;
+}
 
-	std::cout << "Roll: " << toString(snap.diceRoll) << "\n";
-	std::cout << "Attacker Intent: " << toString(snap.attackerIntent) << "\n";
-	std::cout << "Defender Intent: " << toString(snap.defenderIntent) << "\n";
-	std::cout << "Damage -> Defender: " << snap.result.damageToDefender
-		<< " | Attacker: " << snap.result.damageToAttacker << "\n\n";
+void GameEngine::runGame() {
+	int turn = 1;
+	while (attacker.isAlive() && defender.isAlive()) {
+		std::cout << "\n--- Turn " << turn++ << " ---\n";
+
+		TurnSnapshot snap = buildTurn();
+
+		defender.takeDamage(snap.result.damageToDefender);
+		attacker.takeDamage(snap.result.damageToAttacker);
+
+		std::cout << "Roll: " << toString(snap.diceRoll) << "\n";
+		std::cout << "Attacker intent: " << toString(snap.attackerIntent) << "\n";
+		std::cout << "Defender intent: " << toString(snap.defenderIntent) << "\n";
+
+		std::cout << "Damage -> Defender: " << snap.result.damageToDefender
+			<< " | Attacker: " << snap.result.damageToAttacker << "\n";
+
+		std::cout << "Health -> Attacker: " << attacker.health
+			<< " | Defender: " << defender.health << "\n";
+	}
+
+	std::cout << "\n=== Game Over ===\n";
+	if (attacker.isAlive()) {
+		std::cout << "Attacker wins!\n";
+	}
+	else {
+		std::cout << "Defender wins!\n";
+	}
 }

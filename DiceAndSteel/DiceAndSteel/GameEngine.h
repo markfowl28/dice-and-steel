@@ -1,9 +1,16 @@
 #pragma once
 #include "TurnSnapshot.h"
+#include "Player.h"
 
 class GameEngine {
 public:
-	void runTurn();
+	GameEngine();
+
+	void runGame();
+
+private:
+	Player attacker;
+	Player defender;
 };
 
 TurnSnapshot buildTurn();
