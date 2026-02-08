@@ -1,9 +1,12 @@
 #include "Resolution.h"
 #include "Combat.h"
+#include "Player.h"
 
 ResolutionResult resolveCombat(
 	CombatIntent attackerIntent,
-	CombatIntent defenderIntent
+	CombatIntent defenderIntent,
+	Player& attacker,
+	Player& defender
 ) {
 	ResolutionResult result;
 
@@ -13,7 +16,7 @@ ResolutionResult resolveCombat(
 
 	//Attacker Intent
 	if (attackerIntent == CombatIntent::Attack) {
-		attackPower = 1;
+		attackPower = 1 + attacker.bonusAttack;
 	}
 
 	//Defender Intent

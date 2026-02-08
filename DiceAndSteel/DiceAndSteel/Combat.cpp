@@ -1,5 +1,6 @@
 #include "Combat.h"
 #include <string>
+#include "Dice.h"
 
 CombatIntent mapDiceToIntent(DiceFace face, Role role) {
     if (role == Role::Attacker) {

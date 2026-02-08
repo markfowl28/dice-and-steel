@@ -4,8 +4,12 @@
 #include "Combat.h"
 #include "Resolution.h"
 #include <iostream>
+#include "Player.h"
+#include "BuffAttackEffect.h"
+#include <memory>
+#include "TurnPhase.h"
 
-TurnSnapshot buildTurn() {
+TurnSnapshot buildTurn(Player& attacker, Player& defender) {
 	TurnSnapshot snap;
 
 	snap.diceRoll = rollDie();
@@ -15,7 +19,9 @@ TurnSnapshot buildTurn() {
 
 	snap.result = resolveCombat(
 		snap.attackerIntent,
-		snap.defenderIntent
+		snap.defenderIntent,
+		attacker,
+		defender
 		);
 
 	return snap;
@@ -29,9 +35,26 @@ GameEngine::GameEngine() {
 void GameEngine::runGame() {
 	int turn = 1;
 	while (attacker.isAlive() && defender.isAlive()) {
+		attacker.bonusAttack = 0;
+		defender.bonusAttack = 0;
+
+		attacker.applyStatus(
+			std::make_unique<BuffAttackEffect>(1)
+		);
+
+
 		std::cout << "\n--- Turn " << turn++ << " ---\n";
 
-		TurnSnapshot snap = buildTurn();
+		attacker.processStatusEffects(TurnPhase::Start, defender);
+		defender.processStatusEffects(TurnPhase::Start, attacker);
+
+		attacker.processStatusEffects(TurnPhase::Resolution, defender);
+		defender.processStatusEffects(TurnPhase::Resolution, attacker);
+
+		TurnSnapshot snap = buildTurn(attacker, defender);
+
+		attacker.processStatusEffects(TurnPhase::End, defender);
+		defender.processStatusEffects(TurnPhase::End, attacker);
 
 		defender.takeDamage(snap.result.damageToDefender);
 		attacker.takeDamage(snap.result.damageToAttacker);

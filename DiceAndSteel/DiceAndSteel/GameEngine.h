@@ -13,5 +13,5 @@ private:
 	Player defender;
 };
 
-TurnSnapshot buildTurn();
+TurnSnapshot buildTurn(Player& attacker, Player& defender);
 

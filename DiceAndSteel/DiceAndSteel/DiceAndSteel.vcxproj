@@ -127,19 +127,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BuffAttackEffect.cpp" />
     <ClCompile Include="Combat.cpp" />
     <ClCompile Include="Dice.cpp" />
     <ClCompile Include="DiceAndSteel.cpp" />
     <ClCompile Include="GameEngine.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Resolution.cpp" />
+    <ClCompile Include="StatusEffect.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BuffAttackEffect.h" />
     <ClInclude Include="Combat.h" />
     <ClInclude Include="Dice.h" />
     <ClInclude Include="GameEngine.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Resolution.h" />
+    <ClInclude Include="StatusEffect.h" />
+    <ClInclude Include="TurnPhase.h" />
     <ClInclude Include="TurnSnapshot.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

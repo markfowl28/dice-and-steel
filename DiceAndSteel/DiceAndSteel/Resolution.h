@@ -1,5 +1,6 @@
 #pragma once
 #include "Combat.h"
+#include "Player.h"
 
 struct ResolutionResult {
 	int damageToDefender = 0;
@@ -8,5 +9,7 @@ struct ResolutionResult {
 
 ResolutionResult resolveCombat(
 	CombatIntent attackerIntent,
-	CombatIntent defenderIntent
+	CombatIntent defenderIntent,
+	Player& attacker,
+	Player& defender
 );
