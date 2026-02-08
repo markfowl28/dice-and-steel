@@ -5,9 +5,10 @@
 #include "Resolution.h"
 #include <iostream>
 #include "Player.h"
-#include "BuffAttackEffect.h"
 #include <memory>
 #include "TurnPhase.h"
+#include "BuffAttackEffect.h"
+#include "BuffDefenseEffect.h"
 #include "DebuffAttackEffect.h"
 #include "DebuffDefenseEffect.h"
 
@@ -46,6 +47,10 @@ void GameEngine::runGame() {
 
 		defender.applyStatus(
 			std::make_unique<DebuffDefenseEffect>(1)
+		);
+
+		defender.applyStatus(
+			std::make_unique<BuffDefenseEffect>(1)
 		);
 
 		std::cout << "\n--- Turn " << turn++ << " ---\n";
