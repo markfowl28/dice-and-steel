@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="BuffAttackEffect.cpp" />
     <ClCompile Include="Combat.cpp" />
+    <ClCompile Include="DebuffAttackEffect.cpp" />
     <ClCompile Include="Dice.cpp" />
     <ClCompile Include="DiceAndSteel.cpp" />
     <ClCompile Include="GameEngine.cpp" />
@@ -139,6 +140,7 @@
   <ItemGroup>
     <ClInclude Include="BuffAttackEffect.h" />
     <ClInclude Include="Combat.h" />
+    <ClInclude Include="DebuffAttackEffect.h" />
     <ClInclude Include="Dice.h" />
     <ClInclude Include="GameEngine.h" />
     <ClInclude Include="Player.h" />

@@ -8,6 +8,7 @@
 #include "BuffAttackEffect.h"
 #include <memory>
 #include "TurnPhase.h"
+#include "DebuffAttackEffect.h"
 
 TurnSnapshot buildTurn(Player& attacker, Player& defender) {
 	TurnSnapshot snap;
@@ -42,6 +43,9 @@ void GameEngine::runGame() {
 			std::make_unique<BuffAttackEffect>(1)
 		);
 
+		attacker.applyStatus(
+			std::make_unique<DebuffAttackEffect>(1)
+		);
 
 		std::cout << "\n--- Turn " << turn++ << " ---\n";
 
