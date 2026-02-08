@@ -21,7 +21,7 @@ ResolutionResult resolveCombat(
 
 	//Defender Intent
 	if (defenderIntent == CombatIntent::Defend) {
-		defensePower = 1;
+		defensePower = 1 + defender.bonusDefense;
 	}
 
 	if (defenderIntent == CombatIntent::Counter) {

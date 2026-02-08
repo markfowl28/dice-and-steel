@@ -8,6 +8,7 @@
 struct Player {
     int health = 10;
     int bonusAttack = 0;
+    int bonusDefense = 0;
 
     std::vector<std::unique_ptr<StatusEffect>> statusEffects;
 

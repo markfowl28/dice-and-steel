@@ -9,6 +9,7 @@
 #include <memory>
 #include "TurnPhase.h"
 #include "DebuffAttackEffect.h"
+#include "DebuffDefenseEffect.h"
 
 TurnSnapshot buildTurn(Player& attacker, Player& defender) {
 	TurnSnapshot snap;
@@ -35,16 +36,16 @@ GameEngine::GameEngine() {
 
 void GameEngine::runGame() {
 	int turn = 1;
+
 	while (attacker.isAlive() && defender.isAlive()) {
 		attacker.bonusAttack = 0;
 		defender.bonusAttack = 0;
 
-		attacker.applyStatus(
-			std::make_unique<BuffAttackEffect>(1)
-		);
+		attacker.bonusDefense = 0;
+		defender.bonusDefense = 0;
 
-		attacker.applyStatus(
-			std::make_unique<DebuffAttackEffect>(1)
+		defender.applyStatus(
+			std::make_unique<DebuffDefenseEffect>(1)
 		);
 
 		std::cout << "\n--- Turn " << turn++ << " ---\n";
@@ -54,6 +55,8 @@ void GameEngine::runGame() {
 
 		attacker.processStatusEffects(TurnPhase::Resolution, defender);
 		defender.processStatusEffects(TurnPhase::Resolution, attacker);
+
+		std::cout << "Defense bonus: " << defender.bonusDefense << "\n";
 
 		TurnSnapshot snap = buildTurn(attacker, defender);
 
