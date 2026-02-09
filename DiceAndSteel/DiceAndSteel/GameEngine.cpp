@@ -7,6 +7,7 @@
 #include "Player.h"
 #include "TurnPhase.h"
 #include "AttackBuffCard.h"
+#include "DefenseBuffCard.h"
 
 TurnSnapshot buildTurn(Player& attacker, Player& defender) {
 	TurnSnapshot snap;
@@ -56,7 +57,7 @@ void GameEngine::runGame() {
 
 		std::cout << "\n--- Turn " << turn++ << " ---\n";
 
-		AttackBuffCard buff(1);
+		DefenseBuffCard buff(1);
 		buff.play(attacker, defender);
 
 		attacker.processStatusEffects(TurnPhase::Start, defender);
@@ -72,6 +73,8 @@ void GameEngine::runGame() {
 
 		defender.takeDamage(snap.result.damageToDefender);
 		attacker.takeDamage(snap.result.damageToAttacker);
+
+		std::cout << "Defense Bonus: " << attacker.bonusDefense << "\n";
 
 		std::cout << "Roll: " << toString(snap.diceRoll) << "\n";
 		std::cout << "Attacker intent: " << toString(snap.attackerIntent) << "\n";

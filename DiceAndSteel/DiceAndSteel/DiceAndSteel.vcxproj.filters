@@ -60,6 +60,9 @@
     <ClCompile Include="AttackBuffCard.cpp">
       <Filter>Cards</Filter>
     </ClCompile>
+    <ClCompile Include="DefenseBuffCard.cpp">
+      <Filter>Cards</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dice.h">
@@ -108,6 +111,9 @@
       <Filter>Cards</Filter>
     </ClInclude>
     <ClInclude Include="AttackBuffCard.h">
+      <Filter>Cards</Filter>
+    </ClInclude>
+    <ClInclude Include="DefenseBuffCard.h">
       <Filter>Cards</Filter>
     </ClInclude>
   </ItemGroup>
