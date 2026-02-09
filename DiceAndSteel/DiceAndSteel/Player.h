@@ -10,6 +10,8 @@ struct Player {
     int bonusAttack = 0;
     int bonusDefense = 0;
 
+    bool isStunned = false;
+
     std::vector<std::unique_ptr<StatusEffect>> statusEffects;
 
     bool isAlive() const {

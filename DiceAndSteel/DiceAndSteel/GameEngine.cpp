@@ -12,14 +12,25 @@
 #include "DebuffAttackEffect.h"
 #include "DebuffDefenseEffect.h"
 #include "PoisonEffect.h"
+#include "StunEffect.h"
 
 TurnSnapshot buildTurn(Player& attacker, Player& defender) {
 	TurnSnapshot snap;
 
 	snap.diceRoll = rollDie();
 
-	snap.attackerIntent = mapDiceToIntent(snap.diceRoll, Role::Attacker);
-	snap.defenderIntent = mapDiceToIntent(snap.diceRoll, Role::Defender);
+	if (attacker.isStunned) {
+		snap.attackerIntent = CombatIntent::None;
+	}
+	else {
+		snap.attackerIntent = mapDiceToIntent(snap.diceRoll, Role::Attacker);
+	}
+
+	if (defender.isStunned) {
+		snap.defenderIntent = CombatIntent::None;
+	} else {
+		snap.defenderIntent = mapDiceToIntent(snap.diceRoll, Role::Defender);
+	}
 
 	snap.result = resolveCombat(
 		snap.attackerIntent,
@@ -46,11 +57,12 @@ void GameEngine::runGame() {
 		attacker.bonusDefense = 0;
 		defender.bonusDefense = 0;
 
-		defender.applyStatus(
-			std::make_unique<PoisonEffect>(1, 1)
-		);
+		attacker.isStunned = false;
+		defender.isStunned = false;
 
 		std::cout << "\n--- Turn " << turn++ << " ---\n";
+
+		attacker.applyStatus(std::make_unique<StunEffect>(1));
 
 		attacker.processStatusEffects(TurnPhase::Start, defender);
 		defender.processStatusEffects(TurnPhase::Start, attacker);
