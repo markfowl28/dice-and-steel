@@ -11,6 +11,7 @@
 #include "BuffDefenseEffect.h"
 #include "DebuffAttackEffect.h"
 #include "DebuffDefenseEffect.h"
+#include "PoisonEffect.h"
 
 TurnSnapshot buildTurn(Player& attacker, Player& defender) {
 	TurnSnapshot snap;
@@ -46,11 +47,7 @@ void GameEngine::runGame() {
 		defender.bonusDefense = 0;
 
 		defender.applyStatus(
-			std::make_unique<DebuffDefenseEffect>(1)
-		);
-
-		defender.applyStatus(
-			std::make_unique<BuffDefenseEffect>(1)
+			std::make_unique<PoisonEffect>(1, 1)
 		);
 
 		std::cout << "\n--- Turn " << turn++ << " ---\n";
@@ -60,8 +57,6 @@ void GameEngine::runGame() {
 
 		attacker.processStatusEffects(TurnPhase::Resolution, defender);
 		defender.processStatusEffects(TurnPhase::Resolution, attacker);
-
-		std::cout << "Defense bonus: " << defender.bonusDefense << "\n";
 
 		TurnSnapshot snap = buildTurn(attacker, defender);
 
