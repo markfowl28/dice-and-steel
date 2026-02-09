@@ -1,18 +1,12 @@
+#include <iostream>
 #include "TurnSnapshot.h"
 #include "GameEngine.h"
 #include "Dice.h"
 #include "Combat.h"
 #include "Resolution.h"
-#include <iostream>
 #include "Player.h"
-#include <memory>
 #include "TurnPhase.h"
-#include "BuffAttackEffect.h"
-#include "BuffDefenseEffect.h"
-#include "DebuffAttackEffect.h"
-#include "DebuffDefenseEffect.h"
-#include "PoisonEffect.h"
-#include "StunEffect.h"
+#include "AttackBuffCard.h"
 
 TurnSnapshot buildTurn(Player& attacker, Player& defender) {
 	TurnSnapshot snap;
@@ -62,7 +56,8 @@ void GameEngine::runGame() {
 
 		std::cout << "\n--- Turn " << turn++ << " ---\n";
 
-		attacker.applyStatus(std::make_unique<StunEffect>(1));
+		AttackBuffCard buff(1);
+		buff.play(attacker, defender);
 
 		attacker.processStatusEffects(TurnPhase::Start, defender);
 		defender.processStatusEffects(TurnPhase::Start, attacker);

@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Cards">
+      <UniqueIdentifier>{e6306199-5c4b-4383-9842-908e259d1b30}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DiceAndSteel.cpp">
@@ -53,6 +56,9 @@
     </ClCompile>
     <ClCompile Include="StunEffect.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AttackBuffCard.cpp">
+      <Filter>Cards</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +103,12 @@
     </ClInclude>
     <ClInclude Include="StunEffect.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Card.h">
+      <Filter>Cards</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackBuffCard.h">
+      <Filter>Cards</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
