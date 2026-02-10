@@ -6,7 +6,6 @@
 #include "Resolution.h"
 #include "Player.h"
 #include "TurnPhase.h"
-#include "PoisonCard.h"
 
 TurnSnapshot buildTurn(Player& attacker, Player& defender) {
 	TurnSnapshot snap;
@@ -66,9 +65,6 @@ void GameEngine::runGame() {
 
 		attacker.processStatusEffects(TurnPhase::End, defender);
 		defender.processStatusEffects(TurnPhase::End, attacker);
-
-		PoisonCard debuff(1, 1);
-		debuff.play(attacker, defender);
 
 		defender.takeDamage(snap.result.damageToDefender);
 		attacker.takeDamage(snap.result.damageToAttacker);

@@ -144,6 +144,7 @@
     <ClCompile Include="PoisonEffect.cpp" />
     <ClCompile Include="Resolution.cpp" />
     <ClCompile Include="StatusEffect.cpp" />
+    <ClCompile Include="StunCard.cpp" />
     <ClCompile Include="StunEffect.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -164,6 +165,7 @@
     <ClInclude Include="PoisonEffect.h" />
     <ClInclude Include="Resolution.h" />
     <ClInclude Include="StatusEffect.h" />
+    <ClInclude Include="StunCard.h" />
     <ClInclude Include="StunEffect.h" />
     <ClInclude Include="TurnPhase.h" />
     <ClInclude Include="TurnSnapshot.h" />

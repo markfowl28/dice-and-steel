@@ -72,6 +72,9 @@
     <ClCompile Include="PoisonCard.cpp">
       <Filter>Cards</Filter>
     </ClCompile>
+    <ClCompile Include="StunCard.cpp">
+      <Filter>Cards</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dice.h">
@@ -132,6 +135,9 @@
       <Filter>Cards</Filter>
     </ClInclude>
     <ClInclude Include="PoisonCard.h">
+      <Filter>Cards</Filter>
+    </ClInclude>
+    <ClInclude Include="StunCard.h">
       <Filter>Cards</Filter>
     </ClInclude>
   </ItemGroup>
