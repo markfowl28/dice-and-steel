@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 #include "TurnSnapshot.h"
 #include "GameEngine.h"
 #include "Dice.h"
@@ -6,6 +7,13 @@
 #include "Resolution.h"
 #include "Player.h"
 #include "TurnPhase.h"
+#include "DeckManager.h"
+#include "AttackBuffCard.h"
+#include "DefenseBuffCard.h"
+#include "AttackDebuffCard.h"
+#include "DefenseDebuffCard.h"
+#include "StunCard.h"
+#include "PoisonCard.h"
 
 TurnSnapshot buildTurn(Player& attacker, Player& defender) {
 	TurnSnapshot snap;
@@ -41,6 +49,17 @@ GameEngine::GameEngine() {
 }
 
 void GameEngine::runGame() {
+	DeckManager deck;
+	deck.addToDraw(std::make_unique<AttackBuffCard>(1));
+	deck.addToDraw(std::make_unique<DefenseBuffCard>(1));
+	deck.addToDraw(std::make_unique<AttackDebuffCard>(1));
+	deck.addToDraw(std::make_unique<DefenseDebuffCard>(1));
+	deck.addToDraw(std::make_unique<StunCard>(1));
+	deck.addToDraw(std::make_unique<PoisonCard>(1, 1));
+
+	deck.shuffleDrawPile();
+	deck.drawHand();
+
 	int turn = 1;
 
 	while (attacker.isAlive() && defender.isAlive()) {

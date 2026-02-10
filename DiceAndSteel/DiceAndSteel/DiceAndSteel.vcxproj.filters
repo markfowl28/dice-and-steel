@@ -16,6 +16,9 @@
     <Filter Include="Cards">
       <UniqueIdentifier>{e6306199-5c4b-4383-9842-908e259d1b30}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Effects">
+      <UniqueIdentifier>{9e10f3f1-cf18-448f-8373-41b7217157db}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DiceAndSteel.cpp">
@@ -36,27 +39,6 @@
     <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StatusEffect.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BuffAttackEffect.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DebuffAttackEffect.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DebuffDefenseEffect.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BuffDefenseEffect.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PoisonEffect.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="StunEffect.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="AttackBuffCard.cpp">
       <Filter>Cards</Filter>
     </ClCompile>
@@ -74,6 +56,30 @@
     </ClCompile>
     <ClCompile Include="StunCard.cpp">
       <Filter>Cards</Filter>
+    </ClCompile>
+    <ClCompile Include="BuffAttackEffect.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="BuffDefenseEffect.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="DebuffAttackEffect.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="DebuffDefenseEffect.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="PoisonEffect.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="StatusEffect.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="StunEffect.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="DeckManagement.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -98,27 +104,6 @@
     <ClInclude Include="TurnPhase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StatusEffect.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BuffAttackEffect.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DebuffAttackEffect.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DebuffDefenseEffect.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BuffDefenseEffect.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PoisonEffect.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="StunEffect.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Card.h">
       <Filter>Cards</Filter>
     </ClInclude>
@@ -139,6 +124,30 @@
     </ClInclude>
     <ClInclude Include="StunCard.h">
       <Filter>Cards</Filter>
+    </ClInclude>
+    <ClInclude Include="BuffAttackEffect.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="BuffDefenseEffect.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="DebuffAttackEffect.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="DebuffDefenseEffect.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="PoisonEffect.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="StatusEffect.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="StunEffect.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="DeckManager.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
