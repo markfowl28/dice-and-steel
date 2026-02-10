@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AttackBuffCard.cpp" />
+    <ClCompile Include="AttackDebuffCard.cpp" />
     <ClCompile Include="BuffAttackEffect.cpp" />
     <ClCompile Include="BuffDefenseEffect.cpp" />
     <ClCompile Include="Combat.cpp" />
@@ -145,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AttackBuffCard.h" />
+    <ClInclude Include="AttackDebuffCard.h" />
     <ClInclude Include="BuffAttackEffect.h" />
     <ClInclude Include="BuffDefenseEffect.h" />
     <ClInclude Include="Card.h" />
