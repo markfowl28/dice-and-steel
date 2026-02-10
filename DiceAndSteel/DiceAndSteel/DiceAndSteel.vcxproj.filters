@@ -66,6 +66,9 @@
     <ClCompile Include="AttackDebuffCard.cpp">
       <Filter>Cards</Filter>
     </ClCompile>
+    <ClCompile Include="DefenseDebuffCard.cpp">
+      <Filter>Cards</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dice.h">
@@ -120,6 +123,9 @@
       <Filter>Cards</Filter>
     </ClInclude>
     <ClInclude Include="AttackDebuffCard.h">
+      <Filter>Cards</Filter>
+    </ClInclude>
+    <ClInclude Include="DefenseDebuffCard.h">
       <Filter>Cards</Filter>
     </ClInclude>
   </ItemGroup>

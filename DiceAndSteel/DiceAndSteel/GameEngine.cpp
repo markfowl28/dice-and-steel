@@ -6,7 +6,7 @@
 #include "Resolution.h"
 #include "Player.h"
 #include "TurnPhase.h"
-#include "AttackDebuffCard.h"
+#include "DefenseDebuffCard.h"
 
 TurnSnapshot buildTurn(Player& attacker, Player& defender) {
 	TurnSnapshot snap;
@@ -56,7 +56,7 @@ void GameEngine::runGame() {
 
 		std::cout << "\n--- Turn " << turn++ << " ---\n";
 
-		AttackDebuffCard debuff(1);
+		DefenseDebuffCard debuff(1);
 		debuff.play(attacker, defender);
 
 		attacker.processStatusEffects(TurnPhase::Start, defender);

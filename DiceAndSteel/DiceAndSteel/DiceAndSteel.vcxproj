@@ -135,6 +135,7 @@
     <ClCompile Include="DebuffAttackEffect.cpp" />
     <ClCompile Include="DebuffDefenseEffect.cpp" />
     <ClCompile Include="DefenseBuffCard.cpp" />
+    <ClCompile Include="DefenseDebuffCard.cpp" />
     <ClCompile Include="Dice.cpp" />
     <ClCompile Include="DiceAndSteel.cpp" />
     <ClCompile Include="GameEngine.cpp" />
@@ -154,6 +155,7 @@
     <ClInclude Include="DebuffAttackEffect.h" />
     <ClInclude Include="DebuffDefenseEffect.h" />
     <ClInclude Include="DefenseBuffCard.h" />
+    <ClInclude Include="DefenseDebuffCard.h" />
     <ClInclude Include="Dice.h" />
     <ClInclude Include="GameEngine.h" />
     <ClInclude Include="Player.h" />
