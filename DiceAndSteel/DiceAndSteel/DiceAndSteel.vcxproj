@@ -140,6 +140,7 @@
     <ClCompile Include="DiceAndSteel.cpp" />
     <ClCompile Include="GameEngine.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PoisonCard.cpp" />
     <ClCompile Include="PoisonEffect.cpp" />
     <ClCompile Include="Resolution.cpp" />
     <ClCompile Include="StatusEffect.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="Dice.h" />
     <ClInclude Include="GameEngine.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PoisonCard.h" />
     <ClInclude Include="PoisonEffect.h" />
     <ClInclude Include="Resolution.h" />
     <ClInclude Include="StatusEffect.h" />
