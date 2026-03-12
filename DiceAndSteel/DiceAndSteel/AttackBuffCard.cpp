@@ -14,3 +14,4 @@ void AttackBuffCard::play(
 		std::make_unique<BuffAttackEffect>(turns)
 	);
 }
+

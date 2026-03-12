@@ -1,5 +1,6 @@
 #pragma once
 #include "Player.h"
+#include <string>
 
 class Card {
 public:
@@ -9,4 +10,7 @@ public:
 		Player& self,
 		Player& opponent
 	) = 0;
+
+	virtual std::string name() const = 0;
+	virtual std::string description() const = 0;
 };

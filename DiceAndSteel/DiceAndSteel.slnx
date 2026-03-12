@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="DiceAndSteel/DiceAndSteel.vcxproj" />
+  <Project Path="DiceAndSteel/DiceAndSteel.vcxproj" Id="cfc7a450-8757-41c5-a02e-4302f4ab6ef6" />
 </Solution>
