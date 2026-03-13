@@ -134,7 +134,7 @@
     <ClCompile Include="Combat.cpp" />
     <ClCompile Include="DebuffAttackEffect.cpp" />
     <ClCompile Include="DebuffDefenseEffect.cpp" />
-    <ClCompile Include="DeckManagement.cpp" />
+    <ClCompile Include="DeckManager.cpp" />
     <ClCompile Include="DefenseBuffCard.cpp" />
     <ClCompile Include="DefenseDebuffCard.cpp" />
     <ClCompile Include="Dice.cpp" />
