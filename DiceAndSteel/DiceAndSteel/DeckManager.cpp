@@ -3,6 +3,7 @@
 #include <random>
 #include <vector>
 #include <utility>
+#include <iostream>
 #include "DeckManager.h"
 #include "Card.h"
 #include "Player.h"
@@ -25,8 +26,7 @@ void DeckManager::shuffleDrawPile() {
 }
 
 void DeckManager::drawHand() {
-	hand.clear();
-	for (int i = 0; i < handSize && !drawPile.empty(); i++) {
+	while (hand.size() < handSize && !drawPile.empty()) {
 		hand.push_back(std::move(drawPile.front()));
 		drawPile.pop_front();
 	}
@@ -48,3 +48,17 @@ void DeckManager::reshuffleDiscardPileIntoHand() {
 	shuffleDrawPile();
 }
 
+void DeckManager::showHand() const {
+	std::cout << "\nYour Hand\n";
+	for (size_t i = 0; i < hand.size(); ++i) {
+		std::cout << i + 1 << ") "
+			<< hand[i]->name()
+			<< ": "
+			<< hand[i]->description()
+			<< "\n";
+	}
+}
+
+int DeckManager::getHandSize() const {
+	return static_cast<int>(hand.size());
+}

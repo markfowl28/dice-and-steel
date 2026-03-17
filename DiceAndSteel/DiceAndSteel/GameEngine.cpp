@@ -55,10 +55,9 @@ void GameEngine::runGame() {
 	deck.addToDraw(std::make_unique<AttackDebuffCard>(1));
 	deck.addToDraw(std::make_unique<DefenseDebuffCard>(1));
 	deck.addToDraw(std::make_unique<StunCard>(1));
-	deck.addToDraw(std::make_unique<PoisonCard>(1, 1));
+	deck.addToDraw(std::make_unique<PoisonCard>(2, 1));
 
 	deck.shuffleDrawPile();
-	deck.drawHand();
 
 	int turn = 1;
 
@@ -74,6 +73,31 @@ void GameEngine::runGame() {
 
 		std::cout << "\n--- Turn " << turn++ << " ---\n";
 
+		if (deck.getHandSize() == 0) { 
+			deck.reshuffleDiscardPileIntoHand(); 
+		}
+
+		deck.drawHand();
+		deck.showHand();
+
+		int choice = -1;
+
+		while (true) {
+			std::cout << "\nChoose a card to play: ";
+
+			if (!(std::cin >> choice)) {
+				std::cin.clear();
+				std::cin.ignore(1000, '\n');
+				continue;
+			}
+
+			if (choice >= 1 && choice <= deck.getHandSize()) {
+				break;
+			}
+		}
+
+		deck.playCard(choice - 1, attacker, defender);
+
 		attacker.processStatusEffects(TurnPhase::Start, defender);
 		defender.processStatusEffects(TurnPhase::Start, attacker);
 
@@ -88,7 +112,7 @@ void GameEngine::runGame() {
 		defender.takeDamage(snap.result.damageToDefender);
 		attacker.takeDamage(snap.result.damageToAttacker);
 
-		std::cout << "Attacker Bonus Damage: " << attacker.bonusAttack << " | " << "Attacker Bonus Defense: " << attacker.bonusDefense << "\n";
+		std::cout << "\nAttacker Bonus Damage: " << attacker.bonusAttack << " | " << "Attacker Bonus Defense: " << attacker.bonusDefense << "\n";
 		std::cout << "Defender Bonus Damage: " << defender.bonusAttack << " | " << "Defender Bonus Defense: " << defender.bonusDefense << "\n";
 
 		std::cout << "Roll: " << toString(snap.diceRoll) << "\n";

@@ -16,19 +16,23 @@ ResolutionResult resolveCombat(
 
 	//Attacker Intent
 	if (attackerIntent == CombatIntent::Attack) {
-		attackPower = 1 + attacker.bonusAttack;
+		attackPower += 1;
+	}
+
+	if (attackerIntent == CombatIntent::Critical) {
+		attackPower += 2;
 	}
 
 	//Defender Intent
 	if (defenderIntent == CombatIntent::Defend) {
-		defensePower = 1 + defender.bonusDefense;
+		defensePower += 1;
 	}
 
 	if (defenderIntent == CombatIntent::Counter) {
-		counterPower = 1;
+		counterPower += 1;
 	}
 
-	int finalDamage = attackPower - defensePower;
+	int finalDamage = (attackPower + attacker.bonusAttack) - (defensePower + defender.bonusDefense);
 	if (finalDamage < 0) finalDamage = 0;
 
 	result.damageToDefender = finalDamage;

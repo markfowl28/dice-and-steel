@@ -24,6 +24,10 @@ public:
 
 	void reshuffleDiscardPileIntoHand();
 
+	void showHand() const;
+
+	int getHandSize() const;
+
 private:
 	std::deque<std::unique_ptr<Card>> drawPile;
 	std::vector<std::unique_ptr<Card>> hand;

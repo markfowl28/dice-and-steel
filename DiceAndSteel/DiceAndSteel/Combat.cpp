@@ -5,8 +5,10 @@
 CombatIntent mapDiceToIntent(DiceFace face, Role role) {
     if (role == Role::Attacker) {
         switch (face) {
-        case DiceFace::Attack:
         case DiceFace::Critical:
+            return CombatIntent::Critical;
+        case DiceFace::Attack:
+        case DiceFace::Wild:
             return CombatIntent::Attack;
         default: return CombatIntent::None;
         }
@@ -15,6 +17,7 @@ CombatIntent mapDiceToIntent(DiceFace face, Role role) {
     if (role == Role::Defender) {
         switch (face) {
         case DiceFace::Defend:
+        case DiceFace::Wild:
             return CombatIntent::Defend;
         case DiceFace::Counter:
             return CombatIntent::Counter;

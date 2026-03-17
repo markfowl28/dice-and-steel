@@ -14,7 +14,7 @@ public:
 
 	std::string name() const override { return "Attack Buff"; }
 
-	std::string description() const override { return "+1 attack for 2 turns"; }
+	std::string description() const override { return "+1 attack for 1 turn"; }
 
 private:
 	int turns;

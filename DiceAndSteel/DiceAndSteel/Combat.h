@@ -10,6 +10,7 @@ enum class Role {
 enum class CombatIntent {
 	Attack,
 	Defend,
+	Critical,
 	Counter,
 	None
 };
